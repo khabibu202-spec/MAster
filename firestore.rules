@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Function to check if user is signed in
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Function to check if user has admin role (optional enhancement)
+    function isAdmin() {
+      return isAuthenticated() && 
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    // Default rule: allow read/write to all authenticated users for now
+    match /{document=**} {
+      allow read, write: if isAuthenticated();
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "SIM Sarpras SMP",
+  "description": "Sistem Informasi Manajemen Sarana dan Prasarana (Aset) untuk Sekolah Menengah Pertama. Lengkap, detail, dan terpadu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

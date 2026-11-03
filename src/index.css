@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  --color-primary-950: #082f49;
+  --color-primary: #0284c7;
+  --color-primary-foreground: #ffffff;
+}
+
+/* =========================================================
+   LIGHT & DARK MODE GLOBAL STYLING
+   Mode Terang: Full Putih, Kombinasi Biru, dan Tulisan Hitam
+   Mode Gelap: Dark Slate/Navy, Tulisan Putih, Kombinasi Biru
+========================================================= */
+
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Mode Terang (Default) */
+html:not(.dark) {
+  background-color: #ffffff !important;
+  color: #000000;
+}
+
+html:not(.dark) body {
+  background-color: #ffffff !important;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tulisan Hitam Pekat di Mode Terang untuk semua elemen teks utama */
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) h5,
+html:not(.dark) h6 {
+  color: #000000;
+  font-weight: 800;
+}
+
+html:not(.dark) p:not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-primary"]):not([class*="text-white"]):not([class*="text-emerald"]):not([class*="text-rose"]):not([class*="text-amber"]):not([class*="text-red"]) {
+  color: #000000;
+}
+
+html:not(.dark) label {
+  color: #000000;
+  font-weight: 700;
+}
+
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea {
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #bae6fd;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #475569;
+}
+
+html:not(.dark) th {
+  color: #000000;
+  font-weight: 800;
+}
+
+html:not(.dark) td {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Background Card & Panel di Mode Terang Full Putih Bersih */
+html:not(.dark) .card,
+html:not(.dark) [class*="bg-slate-50"],
+html:not(.dark) [class*="bg-gray-50"] {
+  background-color: #ffffff;
+}
+
+/* Mode Gelap */
+html.dark {
+  background-color: #020617 !important;
+  color: #f8fafc;
+}
+
+html.dark body {
+  background-color: #020617 !important;
+  color: #f8fafc;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-color: #1e293b;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #94a3b8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html:not(.dark) ::webkit-scrollbar-thumb {
+  background: #bae6fd;
+  border-radius: 4px;
+}
+
+html:not(.dark) ::webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+html.dark ::webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+html.dark ::webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}

@@ -1,0 +1,73 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "description": "User profiles and RBAC roles",
+      "fields": [
+        { "name": "email", "type": "string" },
+        { "name": "role", "type": "string", "description": "'admin' or 'operator'" }
+      ]
+    },
+    {
+      "name": "assets",
+      "description": "School assets",
+      "fields": []
+    },
+    {
+      "name": "rooms",
+      "description": "Rooms in the school",
+      "fields": []
+    },
+    {
+      "name": "consumables",
+      "description": "Consumable items",
+      "fields": []
+    },
+    {
+      "name": "procurements",
+      "description": "Procurement requests",
+      "fields": []
+    },
+    {
+      "name": "borrowings",
+      "description": "Asset borrowing records",
+      "fields": []
+    },
+    {
+      "name": "mutations",
+      "description": "Asset location mutations",
+      "fields": []
+    },
+    {
+      "name": "maintenances",
+      "description": "Asset maintenance records",
+      "fields": []
+    },
+    {
+      "name": "stocktakes",
+      "description": "Inventory stocktake records",
+      "fields": []
+    },
+    {
+      "name": "disposals",
+      "description": "Asset disposal records",
+      "fields": []
+    },
+    {
+      "name": "settings",
+      "description": "Global application settings (e.g., schoolProfile)",
+      "fields": []
+    }
+  ],
+  "roles": [
+    {
+      "name": "admin",
+      "description": "Full access to all collections"
+    },
+    {
+      "name": "operator",
+      "description": "Can read all, but only write certain records (placeholder if needed)"
+    }
+  ],
+  "security_rules_summary": "Only authenticated users can read/write data. Admins have full access. For now, we allow any authenticated user to read and write since this is an internal dashboard app."
+}
